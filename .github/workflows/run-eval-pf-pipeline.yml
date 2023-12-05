@@ -9,13 +9,19 @@ env:
   GROUP: ${{secrets.group}}
   WORKSPACE: ${{secrets.workspace}}
   SUBSCRIPTION: ${{secrets.subscriptionId}}
-  RUN_NAME: web_classification_variant_1_20230816_215600_605116
-  EVAL_RUN_NAME: classification_accuracy_eval_default_20230821_111809_077086
-
+  RUN_NAME: web_classification_variant_1_20231205
+  EVAL_RUN_NAME: classification_accuracy_eval_default_2023120
 jobs:
   login-and-run-and-evalpf:
     runs-on: ubuntu-latest 
     steps:
+    - name: Check on env
+      run: |
+            echo "GROUP=$GROUP" >> "$GITHUB_ENV"
+            echo "WORKSPACE=$WORKSPACE" >> "$GITHUB_ENV"
+            echo "SUBSCRIPTION=$SUBSCRIPTION" >> "$GITHUB_ENV"
+            echo "RUN_NAME=$RUN_NAME" >> "$GITHUB_ENV"
+            echo "EVAL_RUN_NAME=$EVAL_RUN_NAME" >> "$GITHUB_ENV"
     - name: Check out repo
       uses: actions/checkout@v2
     - name: Install az ml extension
