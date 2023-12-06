@@ -1,7 +1,7 @@
 $schema: https://azuremlschemas.azureedge.net/promptflow/latest/AzureOpenAIConnection.schema.json
-name: Default_AzureOpenAI
+name: AOAIconnection
 type: azure_open_ai
-api_key: <api-key>
-api_base: "https://eastus.api.cognitive.microsoft.com"
+api_key: "4cfc8f6aaa01451ebae5276b1ced4021"
+api_base: "https://hongopenai.openai.azure.com/"
 api_type: "azure"
 api_version: "2023-03-15-preview"
