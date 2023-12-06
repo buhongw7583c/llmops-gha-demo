@@ -9,9 +9,9 @@ on:
       - completed
 
 env: 
-  GROUP: ${{secrets.group}}
-  WORKSPACE: ${{secrets.workspace}}
-  SUBSCRIPTION: ${{secrets.subscriptionId}}
+  GROUP: ${{secrets.GROUP}}
+  WORKSPACE: ${{secrets.WORKSPACE}}
+  SUBSCRIPTION: ${{secrets.SUBSCRIPTION}}
   RUN_NAME: web_classification_variant_1_20231205
   EVAL_RUN_NAME: classification_accuracy_eval_default_2023120
   ENDPOINT_NAME: web-classification
