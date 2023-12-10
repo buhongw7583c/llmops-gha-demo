@@ -41,8 +41,6 @@ jobs:
       run: echo "ENDPOINT_NAME=$(echo 'web-classification-92b018')" >> "$GITHUB_ENV"
     - name: Display endpoint name
       run: echo "Endpoint name is:" ${{env.ENDPOINT_NAME}}
-    - name: Setup endpoint
-      run: az ml online-endpoint create --file promptflow/deployment/endpoint.yaml  --name ${{env.ENDPOINT_NAME}} -g ${{env.GROUP}} -w ${{env.WORKSPACE}}
     - name: Update deployment PRT_CONFIG variable
       run: |
         PRT_CONFIG_OVERRIDE=deployment.subscription_id=${{ env.SUBSCRIPTION }},deployment.resource_group=${{ env.GROUP }},deployment.workspace_name=${{ env.WORKSPACE }},deployment.endpoint_name=${{ env.ENDPOINT_NAME }},deployment.deployment_name=${{ env.DEPLOYMENT_NAME }}
