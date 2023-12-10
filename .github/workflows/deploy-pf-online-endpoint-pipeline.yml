@@ -15,7 +15,7 @@ env:
   RUN_NAME: web_classification_variant_1_20231205
   EVAL_RUN_NAME: classification_accuracy_eval_default_2023120
   ENDPOINT_NAME: web-classification
-  DEPLOYMENT_NAME: blue
+  DEPLOYMENT_NAME: green
 
 jobs:
   create-endpoint-and-deploy-pf:
