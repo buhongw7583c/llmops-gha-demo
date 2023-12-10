@@ -15,7 +15,7 @@ env:
   RUN_NAME: web_classification_variant_1_20231205
   EVAL_RUN_NAME: classification_accuracy_eval_default_2023120
   ENDPOINT_NAME: web-classification
-  DEPLOYMENT_NAME: green
+  DEPLOYMENT_NAME: blue
 
 jobs:
   create-endpoint-and-deploy-pf:
@@ -50,6 +50,6 @@ jobs:
     - name: Check the status of the endpoint
       run: az ml online-endpoint show -n ${{env.ENDPOINT_NAME}} -g ${{env.GROUP}} -w ${{env.WORKSPACE}}
     - name: Check the status of the deployment
-      run: az ml online-deployment get-logs --name green --endpoint-name ${{env.ENDPOINT_NAME}} -g ${{env.GROUP}} -w ${{env.WORKSPACE}}
+      run: az ml online-deployment get-logs --name blue --endpoint-name ${{env.ENDPOINT_NAME}} -g ${{env.GROUP}} -w ${{env.WORKSPACE}}
     - name: Invoke model
       run: az ml online-endpoint invoke --name ${{env.ENDPOINT_NAME}} --request-file promptflow/deployment/sample-request.json  -g ${{env.GROUP}} -w ${{env.WORKSPACE}} 
